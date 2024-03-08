@@ -1,5 +1,5 @@
 package OOP.entity;
 
 public enum Departments {
-    IT, MARKETING, HRM, INVESTIGATION, FINANCE
+    IT, MARKETING, HRM, INVESTIGATION, FINANCE, SALES
 }
