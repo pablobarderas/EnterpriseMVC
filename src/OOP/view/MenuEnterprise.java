@@ -2,6 +2,7 @@ package OOP.view;
 
 import java.util.Scanner;
 
+// Menu of Enterprise
 public class MenuEnterprise {
     public static void main(String[] args) {
 
