@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Enterprise {
+    //lista de empleados List<Persona> employees
     private List<Persona> employees;
     private List<Departments> departments = new ArrayList<Departments>(Arrays.asList(Departments.values()));
 

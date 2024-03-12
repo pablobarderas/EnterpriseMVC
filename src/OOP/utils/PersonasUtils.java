@@ -31,7 +31,7 @@ public class PersonasUtils {
                                 646445566, "53791047K");
 
                 personas.addAll(Arrays.asList(persona, personaPablo, personaCr7, personaMbapee, personaVini,
-                personaLunnin));
+                                personaLunnin));
 
                 // Añadir id segun posicion en la lista
                 for (Persona personaImpreso : personas) {
@@ -51,8 +51,31 @@ public class PersonasUtils {
                 return longitudNumero == numeroCaracteres;
         }
 
-        public static Departments getDepartment(String department){
-               
-                return null;
+        public static Departments getDepartment(String departmentResponse) {
+
+                try {
+                        return Departments.valueOf(departmentResponse.toUpperCase());
+                } catch (IllegalArgumentException e) {
+                        // La respuesta del usuario no coincide con ningún departamento
+                        System.out.println("Departamento no válido: " + departmentResponse);
+                        return null;
+                }
+                // esto es haciendo CON FOR
+                /*
+                 * List<Departments> departments = Arrays.asList(Departments.values());
+                 * for (Departments department : departments) {
+                 * // System.out.println(department);
+                 * // pasamos el departamento a String para poder comparar con el String
+                 * // que nos proporciona el usuario
+                 * if (department.toString().equalsIgnoreCase(departmentResponse)) {
+                 * // si la respuesta coincide con el departamento
+                 * // lo devolvemos con el return
+                 * return department;
+                 * }
+                 * 
+                 * }
+                 * return null;
+                 */
         }
+
 }

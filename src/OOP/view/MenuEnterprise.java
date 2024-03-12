@@ -1,6 +1,5 @@
 package OOP.view;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -37,6 +36,12 @@ public class MenuEnterprise {
                     break;
                 case "1":
                     Persona persona = new Persona();
+                    //con esto obtenemos el tamaño de la lista antes de añadir la nueva persona por eso 
+                    //aumenta el ID en 1
+                    persona.setID(enterprise.getEmployees().size());
+                    //otra forma
+                    //persona.setID(enterprise.getEmployees().get(enterprise.getEmployees().size()-1).getID()+1);
+
                     System.out.println("Nombre empleado ");
                     String name = sc.nextLine();
                     persona.setNombre(name);
@@ -55,13 +60,14 @@ public class MenuEnterprise {
 
                     System.out.println("Indique departamento empleado "+ Arrays.toString(Departments.values()));
                     String responseDeparments = sc.next();
-                    List<Departments> departments = Arrays.asList(Departments.values());
-                    if(departments.contains(responseDeparments.toUpperCase())){
-                        persona.setDepartment(departments.get(departments.indexOf(responseDeparments)));
-                    }
+                    Departments department = PersonasUtils.getDepartment(responseDeparments);
+                    persona.setDepartment(department);
+
+                    //para añadir la persona a la lista
                     enterpriseController.addPersona(persona, enterprise);
                     System.out.println(persona);
-                    
+                    break;
+
                 case "9":
                     System.out.println("Exit...");
                     System.exit(0);
