@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import OOP.entity.Departments;
 import OOP.entity.Persona;
 
 public class PersonasUtils {
@@ -48,5 +49,10 @@ public class PersonasUtils {
                 // ponemos longitudNumero == numeroCaracteres para comparar la longitudNuemero
                 // con el numero de caracteres que nos han pasado por parametro
                 return longitudNumero == numeroCaracteres;
+        }
+
+        public static Departments getDepartment(String department){
+               
+                return null;
         }
 }

@@ -13,6 +13,8 @@ public interface IEnterpriseDAO {
     // lo hacemos asi porque no tenemos ningun metodo de persistencia de datos
     public List<Persona> getAllEmployees(Enterprise enterprise);
 
+    public Persona addPersona(Persona persona,Enterprise enterprise);
+
     public List<Persona> getEmployeesByDepartment(Departments department, Enterprise enterprise);
 
     public Persona getEmployeeByDni(String dni, Enterprise enterprise);

@@ -16,6 +16,17 @@ public class EnterpriseController implements IEnterpriseDAO {
         return new ArrayList<>(enterprise.getEmployees());
     }
 
+    
+    @Override
+    public Persona addPersona(Persona persona,Enterprise enterprise) {
+        // TODO Auto-generated method stu
+        //creamos una nuerva persona con la persona que tenemos por parametro
+        Persona newPersona = persona;
+        enterprise.getEmployees().add(newPersona);
+        return persona;
+    }
+
+
     @Override
     public List<Persona> getEmployeesByDepartment(Departments department, Enterprise enterprise) {
         // TODO Auto-generated method stub

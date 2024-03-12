@@ -162,10 +162,11 @@ public class Persona implements Comparable<Persona> {
 
     @Override
     public String toString() {
-        return "Persona [ID=" + ID + ", nombre=" + nombre + ", apellido=" + apellido + ", numTelefono="
+        return "Persona [ID= " + ID + ", nombre= " + nombre + ", apellido= " + apellido + ", numTelefono= "
                 + (int) numTelefono
-                + ", dni=" + dni + "]";
+                + ", dni= " + dni +", Deparment= "+ department+"]";
     }
+
 
     @Override
     public int hashCode() {

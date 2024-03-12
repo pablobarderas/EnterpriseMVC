@@ -1,8 +1,11 @@
 package OOP.view;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import OOP.entity.Departments;
 import OOP.entity.Enterprise;
 import OOP.entity.Persona;
 import OOP.services.EnterpriseController;
@@ -32,6 +35,33 @@ public class MenuEnterprise {
                 case "0":
                     showEmployees(enterpriseController.getAllEmployees(enterprise));
                     break;
+                case "1":
+                    Persona persona = new Persona();
+                    System.out.println("Nombre empleado ");
+                    String name = sc.nextLine();
+                    persona.setNombre(name);
+
+                    System.out.println("Apellido empleado ");
+                    String lastName = sc.nextLine();
+                    persona.setApellido(lastName);
+
+                    System.out.println("Numero de telefono ");
+                    double numTlf = sc.nextDouble();
+                    persona.setNumTelefono(numTlf);
+
+                    System.out.println("Dni empleado ");
+                    String dni = sc.next();
+                    persona.setDni(dni);
+
+                    System.out.println("Indique departamento empleado "+ Arrays.toString(Departments.values()));
+                    String responseDeparments = sc.next();
+                    List<Departments> departments = Arrays.asList(Departments.values());
+                    if(departments.contains(responseDeparments.toUpperCase())){
+                        persona.setDepartment(departments.get(departments.indexOf(responseDeparments)));
+                    }
+                    enterpriseController.addPersona(persona, enterprise);
+                    System.out.println(persona);
+                    
                 case "9":
                     System.out.println("Exit...");
                     System.exit(0);
@@ -54,7 +84,7 @@ public class MenuEnterprise {
 
         // Options
         String zero = "\n* 0. Show employees";
-        String one = "\n* 1. Update employees";
+        String one = "\n* 1. Add employees";
         String two = "\n* 2. Delete employees";
         String three = "\n* 3. Sort employees (by name, lastName or ID)";
         String four = "\n* 4. Select departments";
