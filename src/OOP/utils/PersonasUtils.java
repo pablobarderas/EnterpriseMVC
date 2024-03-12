@@ -20,17 +20,17 @@ public class PersonasUtils {
                 Persona personaCr7 = new Persona("Cr7", "Dios",
                                 655228888, "53491045F");
 
-                Persona personaMbapee = new Persona("Mbapee", "Fichaje",
+                Persona personaMbapee = new Persona("Mbapee", "Tortuga",
                                 646445566, "53491045J");
 
-                Persona personaVini = new Persona("Mbapee", "Fichaje",
-                                646445566, "53491045J");
+                Persona personaVini = new Persona("Vini", "Negro",
+                                646445566, "53999085J");
 
-                Persona personaVini2 = new Persona("Mbapee", "Fichaje",
-                                646445566, "53491045J");
+                Persona personaLunnin = new Persona("Lunnin", "Soso",
+                                646445566, "53791047K");
 
                 personas.addAll(Arrays.asList(persona, personaPablo, personaCr7, personaMbapee, personaVini,
-                                personaVini2));
+                personaLunnin));
 
                 // Añadir id segun posicion en la lista
                 for (Persona personaImpreso : personas) {

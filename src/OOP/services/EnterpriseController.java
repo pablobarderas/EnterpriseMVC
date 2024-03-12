@@ -1,5 +1,6 @@
 package OOP.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import OOP.entity.Departments;
@@ -7,6 +8,13 @@ import OOP.entity.Enterprise;
 import OOP.entity.Persona;
 
 public class EnterpriseController implements IEnterpriseDAO {
+
+    @Override
+    public List<Persona> getAllEmployees(Enterprise enterprise) {
+        // TODO Auto-generated method stub
+        //siempre que podamos en vez de devolver la lista que tenemos creamos y devolvemos una nueva
+        return new ArrayList<>(enterprise.getEmployees());
+    }
 
     @Override
     public List<Persona> getEmployeesByDepartment(Departments department, Enterprise enterprise) {
@@ -26,4 +34,5 @@ public class EnterpriseController implements IEnterpriseDAO {
         throw new UnsupportedOperationException("Unimplemented method 'getEmployeeByID'");
     }
 
+    
 }
